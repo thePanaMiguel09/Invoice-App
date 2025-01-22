@@ -1,0 +1,49 @@
+POST http://localhost:3000/api/createinvoice
+Content-Type: application/json
+
+
+{
+  "sellerName": "GadgetHub",
+  "sellerAddress": "456 Gadget Rd, New York, NY",
+  "customerName": "Bob Marley",
+  "customerAddress": "321 Maple St, Brooklyn, NY",
+  "items": [
+    { "description": "Smartphone", "price": 800 },
+    { "description": "Phone Charger", "price": 25 }
+  ],
+  "finalPrice": 825,
+  "terms": "Payment due in 15 days",
+  "invoiceDescription": "Invoice for smartphone and accessories"
+}
+
+
+
+
+####
+GET http://localhost:3000/api/readinvoice/675b12094fe9970f3e08c9a6
+Content-Type: application/json
+
+####
+GET http://localhost:3000/api/readinvoice/all
+Content-Type: application/json
+
+####
+PATCH  http://localhost:3000/api/updateinvoice/675b0bcd302ac3bd5d6023d8
+Content-Type: application/json
+
+{
+  "sellerName": "Miguel",
+  "sellerAddress": "789 Electronics Blvd, Los Angeles, CA 90015",
+  "customerName": "Charlie Brown",
+  "customerAddress": "654 Pine St, Los Angeles, CA 90017",
+  "items": [
+    { "description": "Tablet (iTab 10.5)", "price": 400 },
+    { "description": "Noise Cancelling Headphones (SoundMaster Pro)", "price": 150 }
+  ],
+  "finalPrice": 550,
+  "terms": "Payment due in 7 days",
+  "invoiceDescription": "Invoice for tablet and wireless headphones"
+}
+
+#####
+DELETE http://localhost:3000/api/deleteinvoice/675b0bcd302ac3bd5d6023d8
